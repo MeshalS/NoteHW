@@ -28,3 +28,7 @@ app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "notes.html"));
   });
   
+  // get the api for the note 
+  app.get("/api/notes", function (req, res) {
+    return res.json(notes);
+  });
