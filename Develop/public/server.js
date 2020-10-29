@@ -22,4 +22,9 @@ let notes = [
 
   // assets had erro so we need to have the all assest files 
 app.use("/assets", express.static('./assets/'));
+
+/// nootes page
+app.get("/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "notes.html"));
+  });
   
