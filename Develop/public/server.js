@@ -7,3 +7,11 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+let notes = [
+    {
+      title: 'hello',
+      text: "test note from server",
+      id: 1
+    }
+  ];
