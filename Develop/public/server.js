@@ -40,3 +40,24 @@ app.get("/notes", function (req, res) {
      notes = notes.filter(note => note.id != +id);
   
     return res.json(notes)});
+/// post for the note 
+    app.post("/api/notes", function (req, res) {
+        // req.body hosts is equal to the JSON post sent from the user
+        // This works because of our body parsing middleware
+        var newTable = req.body;
+      
+        console.log(newTable);
+      
+        notes.push(newTable);
+      
+        res.json(newTable);
+      });
+      
+      // Starts the server to begin listening
+      // =============================================================
+
+      // listening the port 
+      app.listen(PORT, function () {
+        console.log("App listening on PORT, http://localhost:" + PORT);
+      });
+      
