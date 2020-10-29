@@ -15,3 +15,8 @@ let notes = [
       id: 1
     }
   ];
+
+  app.get("/", function(req, res) {
+    res.json(path.join(__dirname, "public/index.html"));
+  });
+  
