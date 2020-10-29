@@ -32,3 +32,11 @@ app.get("/notes", function (req, res) {
   app.get("/api/notes", function (req, res) {
     return res.json(notes);
   });
+  // get the api for the note for delating  
+
+  app.delete("/api/notes/:id", function (req, res) {
+    var id = req.params.id;
+    // ading fillter 
+     notes = notes.filter(note => note.id != +id);
+  
+    return res.json(notes)});
