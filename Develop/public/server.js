@@ -15,8 +15,11 @@ let notes = [
       id: 1
     }
   ];
-
+/// for public so as to connect to server 
   app.get("/", function(req, res) {
     res.json(path.join(__dirname, "public/index.html"));
   });
+
+  // assets had erro so we need to have the all assest files 
+app.use("/assets", express.static('./assets/'));
   
